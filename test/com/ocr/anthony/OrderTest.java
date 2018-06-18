@@ -292,7 +292,7 @@ public class OrderTest {
     @Test
     public void Given_BadMenusQuantityInStandardInput_When_MenusIsRun_Then_DisplayErrorSentence() {
         System.setIn(new ByteArrayInputStream(String.format("texte%n1%n1%n2%n3%n").getBytes()));
-        order = new Order();
+        order = new com.ocr.anthony.Order();
         order.runMenus();
         String[] output = outContent.toString().replace("\r\n", "\n").split("\n");
         assertEquals("Vous devez saisir un nombre, correspondant au nombre de menus souhaités", output[1]);
